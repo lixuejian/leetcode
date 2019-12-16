@@ -8,6 +8,20 @@
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
+        if (nums.size() == 0)
+        {
+            return 0;
+        }
+        int position = 0;
+        for (int i = 0; i < nums.size(); i++)
+        {
+            if (nums[i] != nums[position])
+            {
+                position++;
+                nums[position] = nums[i];                
+            }            
+        }
+        return position+1;
         
     }
 };
